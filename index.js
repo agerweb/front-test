@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 const child_process = require('child_process');
 const path = require('path');
+const process = require('process');
 
 
 
@@ -24,7 +25,7 @@ function setPath(){
 }
 
 var p=setPath();
-var xp=path.resolve(__dirname,p)
+var xp=path.resolve(process.cwd(),p)
 
 processFn(`git clone https://gitee.com/agerweb/frontTestTpl.git ${p}`).then(()=>{
     processFn(`cd ${xp}`)
